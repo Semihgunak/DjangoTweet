@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link href="{% static 'template_app/login.css' %}" rel="stylesheet">
+<div class="login">
+    <div class="login-triangle"></div>   
+    <h2 class="login-header">Register</h2>
+  
+    <form class="login-container" action="" method="POST">
+        {% csrf_token %}
+        {% for i in form %}
+            <p>{{i.label_tag}}</p>
+            <p>{{i}}</p>
+          {% endfor %}
+        <button type="submit" class="btn btn-primary" value="register">Signup</button>
+        </form>
+    </div>
+{% endblock  %}

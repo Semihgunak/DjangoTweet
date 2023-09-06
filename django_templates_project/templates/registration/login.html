@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link href="{% static 'template_app/login.css' %}" rel="stylesheet">
+    {%if user.is_authenticated %}
+        <div class="login">
+            <div class="login-triangle"></div>
+            <h2 class="login-header">Welcome</h2>
+            <form class="login-container" action="{% url 'template_app:listtweet' %}">
+            <h2 class="login-header2"> {{user.username}} </h2>
+            <p><input type="submit" value="Return to Homepage"></p>
+            </form>
+        </div>    
+    {%else%}
+    <div class="login">
+        <div class="login-triangle"></div>   
+        <h2 class="login-header">Log in</h2>
+      
+        <form class="login-container" action="{% url 'login' %}"  method="POST">
+            {% csrf_token %}
+            {% for i in form %}
+                <p>{{i.label_tag}}</p>
+                <p>{{i}}</p>
+              {% endfor %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    {%endif%}
+{% endblock  %}

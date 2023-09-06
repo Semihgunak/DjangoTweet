@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!--<img src="{% static 'template_app/yapayzeka.jpeg' %}" alt="My image"> 
+<h2><a href="{% url 'template_app:weatherview' %}">go to weather</h2>-->
+    <link href="{% static 'template_app/custom.css' %}" rel="stylesheet">
+   
+    <div class="container">
+<form>
+        {% for tweet in tweets %}
+        <div class="card" style="padding:10px;">
+          <div class="card-header" style="background-color: rgb(86, 114, 197);">
+            <h5>@{{tweet.nickname}}</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{tweet.message}}</p>
+          </div>
+        </div>  
+        {% endfor %}  
+    </div>
+</form>
+
+
+
+{% endblock  %}

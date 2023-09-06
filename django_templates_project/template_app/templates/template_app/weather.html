@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+{% block content %}
+    <h1>weather report</h1>
+    <h2>istanbul: {{istanbul}}</h2>
+    <br>
+    {% for item in paris %}
+    
+        <p>{{item}} </p>
+    
+    {% endfor %}
+
+    <h2><a href="{% url 'template_app:index' %}">go to index</h2>
+
+{% endblock  %}

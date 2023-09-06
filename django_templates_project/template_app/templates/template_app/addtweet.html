@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link href="{% static 'template_app/custom.css' %}" rel="stylesheet">
+<h2>ADD TWEET PAGE</h2>
+<form action=""  method="POST">
+    {% csrf_token %}
+  <!--
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">@</span>
+    <input type="text" class="form-control" name= "Username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+  -->
+  <div class="mb-3">
+    <label for="message" class="form-label">Example textarea</label>
+    <textarea class="form-control" id="message" name= "message" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock  %}

@@ -1,0 +1,13 @@
+body {
+    min-height: 60rem;
+    padding-top: 10.5rem;
+    padding-left: 30rem;
+    padding-right: 30rem;
+}
+
+.tweetmessage{
+
+width: 250px;
+height: 120px;
+
+}

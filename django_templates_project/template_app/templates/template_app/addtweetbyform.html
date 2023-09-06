@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link href="{% static 'template_app/custom.css' %}" rel="stylesheet">
+<h2>ADD TWEETFORM PAGE</h2>
+<form action=""  method="POST">
+    {% csrf_token %}
+  <div class="mb-3">
+  {{form.nickname_input.label_tag}}
+  {{form.nickname_input}}
+</div>
+  <div class="mb-3">
+  {{form.message_imput.label_tag}}
+  {{form.message_imput}}
+</div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock  %}

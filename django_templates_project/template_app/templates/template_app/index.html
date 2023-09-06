@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<ul>
+    {% for i in musicians %}
+    
+        <li>Name: {{ i.name }}  İnstrument:  {{i.instrument}}   Age:  {{i.age}}    Salary:  {{i.salary}} </li>
+
+    {% endfor %}
+</ul>
+
+{% endblock  %}
